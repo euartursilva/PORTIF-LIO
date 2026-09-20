@@ -1,6 +1,6 @@
 # Artur Silva Araújo | Portfólio
 
-Portfólio pessoal de Artur Silva Araújo, estudante de Engenharia de Software.
+Portfólio pessoal de Artur Silva Araújo, estudante de Engenharia de Software, com foco em tecnologia, interfaces e aprendizado contínuo.
 
 ## Acesso
 
@@ -14,6 +14,17 @@ O site é publicado automaticamente pelo GitHub Pages a cada atualização na br
 
 Uma experiência web interativa com identidade visual inspirada em interfaces tecnológicas, incluindo navegação por seções, painel de identidade, efeitos de movimento e formulário de contato.
 
+## Estrutura
+
+```text
+PORTIF-LIO/
+├── index.html
+├── styles.css
+├── index.js
+├── README.md
+└── .github/workflows/deploy-pages.yml
+```
+
 ## Tecnologias
 
 - HTML5 semântico
@@ -21,4 +32,4 @@ Uma experiência web interativa com identidade visual inspirada em interfaces te
 - JavaScript puro
 - Google Fonts
 
-> Para exibir a foto no painel de identidade, adicione um arquivo chamado `foto-artur.jpg` na raiz deste projeto.
+> Para exibir a foto no painel de identidade, adicione um arquivo chamado `foto-artur.jpg` na raiz deste projeto e publique novamente.
