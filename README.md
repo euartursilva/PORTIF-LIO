@@ -5,7 +5,7 @@ Portfólio pessoal de Artur Silva Araújo, estudante de Engenharia de Software.
 ## Acesso
 
 - Portfólio: [euartursilva.github.io/PORTIF-LIO](https://euartursilva.github.io/PORTIF-LIO/)
-- GitHub: [github.com/euartursilva](https://github.com/euartursilva)
+- Todos os projetos: [github.com/euartursilva](https://github.com/euartursilva)
 - LinkedIn: [perfil profissional](https://www.linkedin.com/in/artur-silva-araújo-9614a7213)
 
 ## Sobre o projeto
