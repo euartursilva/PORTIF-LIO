@@ -1,2 +1,22 @@
-# PORTIF-LIO
-👋 Olá, sou Artur!  Engenheiro de Software em aprendizado. Estou me dedicando a construir uma base sólida em programação, desenvolvendo projetos práticos e aprendendo as melhores práticas de desenvolvimento.  Aqui você acompanha minha evolução na área.  Aberto a feedbacks e colaborações!
+# Artur Silva Araújo | Portfólio
+
+Portfólio pessoal de Artur Silva Araújo, estudante de Engenharia de Software.
+
+## Acesso
+
+- Portfólio: [euartursilva.github.io/PORTIF-LIO](https://euartursilva.github.io/PORTIF-LIO/)
+- GitHub: [github.com/euartursilva](https://github.com/euartursilva)
+- LinkedIn: [perfil profissional](https://www.linkedin.com/in/artur-silva-araújo-9614a7213)
+
+## Sobre o projeto
+
+Uma experiência web interativa com identidade visual inspirada em interfaces tecnológicas, incluindo navegação por seções, painel de identidade, efeitos de movimento e formulário de contato.
+
+## Tecnologias
+
+- HTML5 semântico
+- CSS3 responsivo
+- JavaScript puro
+- Google Fonts
+
+> Para exibir a foto no painel de identidade, adicione um arquivo chamado `foto-artur.jpg` na raiz deste projeto.

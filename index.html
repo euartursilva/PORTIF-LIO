@@ -1,354 +1,82 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <link rel="stylesheet" type="text/css" href="styles.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engenheiro de Software - Portfólio</title>
+    <meta name="description" content="Portfólio de Artur Silva Araújo, estudante de Engenharia de Software.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css.css">
+    <title>Artur Silva Araújo | Portfólio</title>
 </head>
-
 <body>
-    <!-- HEADER -->
-    <header class="header">
-        <h1 class="main-title">ARTUR SILVA ARAÚJO</h1>
-        <p class="subtitle">Estudante de Engenharia de Software</p>
+    <header class="site-header">
+        <a class="brand" href="#about" aria-label="Voltar ao início"><span class="brand-prompt">~/</span>artur<span class="brand-dot">.</span></a>
+        <nav class="navbar" aria-label="Navegação principal">
+            <ul class="nav-menu">
+                <li><button class="nav-btn active" data-section="about">Sobre</button></li>
+                <li><button class="nav-btn" data-section="skills">Habilidades</button></li>
+                <li><button class="nav-btn" data-section="contact">Contato</button></li>
+            </ul>
+        </nav>
+        <a class="header-link" href="mailto:artursilvaaraujo31@gmail.com">Vamos conversar <span>↗</span></a>
     </header>
-
-    <!-- NAVEGAÇÃO -->
-    <nav class="navbar">
-        <ul class="nav-menu">
-            <li><button class="nav-btn active" data-section="about">Sobre</button></li>
-            <li><button class="nav-btn" data-section="skills">Habilidades</button></li>
-            <li><button class="nav-btn" data-section="contact">Contato</button></li>
-        </ul>
-    </nav>
-
-    <!-- MAIN CONTENT -->
     <main>
-        <!-- ============================================
-             SEÇÃO 1: SOBRE
-             ============================================ -->
         <section id="about" class="section active">
-            <h2 class="section-title">Sobre Engenheiros de Software</h2>
-            
-            <!-- Card Principal -->
-            <article class="card card-highlight">
-                <p>O Engenheiro de Software é o profissional responsável por <strong>projetar, desenvolver, testar e manter</strong> sistemas e aplicações de software. Mais do que apenas "programar", ele aplica princípios de engenharia para criar soluções digitais robustas, escaláveis e eficientes que resolvem problemas reais.</p>
-            </article>
-
-            <!-- Tópicos -->
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <p class="eyebrow"><span class="status-dot"></span> Disponível para oportunidades</p>
+                    <p class="terminal-line"><span>artur@portfolio</span>:~$ whoami</p>
+                    <h1 class="main-title">Construo<br><em>possibilidades.</em></h1>
+                    <p class="subtitle">Engenharia de Software, interfaces inteligentes e curiosidade por tudo que a tecnologia ainda pode desbloquear.</p>
+                    <div class="hero-actions"><button class="primary-btn" data-section="contact">Entrar em contato <span>↗</span></button><button class="text-btn" data-section="skills">Conhecer habilidades <span>↓</span></button></div>
+                </div>
+                <div class="hero-aside">
+                    <div class="photo-console" data-tilt>
+                        <div class="console-bar"><span></span><span></span><span></span><small>identity.exe</small></div>
+                        <div class="photo-wrap"><img src="foto-artur.jpg" alt="Foto de Artur Silva Araújo" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"><div class="photo-fallback">ASA</div><div class="scan-line"></div></div>
+                        <p class="photo-caption"><span>01</span> / artur.silva<br><strong>software.engineer</strong></p>
+                    </div>
+                    <div class="orbit-label"><span class="orbit-dot"></span> disponível para criar</div>
+                </div>
+            </div>
+            <div class="signal-strip"><span>STACK // JAVA · PYTHON · REACT · SQL</span><span>STATUS // APRENDENDO SEMPRE</span><span>LOCAL // BAHIA, BR</span></div>
+            <div class="section-heading"><p class="eyebrow">01 / Sobre mim</p><h2 class="section-title">Código com intenção,<br><em>aprendizado constante.</em></h2></div>
+            <article class="card card-highlight"><p>Estou construindo minha carreira com curiosidade, disciplina e atenção aos detalhes. Gosto de entender o problema antes de escrever código e de criar soluções que sejam fáceis de usar, manter e evoluir.</p></article>
             <div class="topics-grid">
-                <!-- Tópico 1: Definição -->
-                <article class="topic-card">
-                    <h3 class="topic-title">📚 Definição & Conceito</h3>
-                    <p>Um engenheiro de software combina conhecimento em computação, matemática e gestão de projetos. É responsável por todo o ciclo de vida do software, desde a concepção até a manutenção. Trabalha com metodologias ágeis, garantindo qualidade e eficiência.</p>
-                </article>
-
-                <!-- Tópico 2: Responsabilidades -->
-                <article class="topic-card">
-                    <h3 class="topic-title">⚙️ Responsabilidades Principais</h3>
-                    <ul class="topic-list">
-                        <li>Analisar requisitos e especificações</li>
-                        <li>Projetar arquiteturas de software</li>
-                        <li>Codificar soluções eficientes</li>
-                        <li>Testes e correção de bugs</li>
-                        <li>Documentação técnica completa</li>
-                        <li>Manutenção e evolução do código</li>
-                    </ul>
-                </article>
-
-                <!-- Tópico 3: Habilidades Técnicas -->
-                <article class="topic-card">
-                    <h3 class="topic-title">💻 Habilidades Técnicas</h3>
-                    <ul class="topic-list">
-                        <li>Linguagens de programação variadas</li>
-                        <li>Bancos de dados e SQL</li>
-                        <li>Sistemas operacionais</li>
-                        <li>Controle de versão (Git)</li>
-                        <li>Padrões de design</li>
-                        <li>Testing e QA automation</li>
-                    </ul>
-                </article>
-
-                <!-- Tópico 4: Habilidades Comportamentais -->
-                <article class="topic-card">
-                    <h3 class="topic-title">🤝 Habilidades Comportamentais</h3>
-                    <ul class="topic-list">
-                        <li>Trabalho em equipe</li>
-                        <li>Comunicação efetiva</li>
-                        <li>Resolução de problemas</li>
-                        <li>Pensamento crítico</li>
-                        <li>Aprendizado contínuo</li>
-                        <li>Gestão de tempo</li>
-                    </ul>
-                </article>
-
-                <!-- Tópico 5: Caminhos de Carreira -->
-                <article class="topic-card">
-                    <h3 class="topic-title">🚀 Caminhos de Carreira</h3>
-                    <ul class="topic-list">
-                        <li>Desenvolvedor Full Stack</li>
-                        <li>Arquiteto de Sistemas</li>
-                        <li>Engenheiro DevOps</li>
-                        <li>Especialista em Segurança</li>
-                        <li>Gerente de Projetos</li>
-                        <li>Empreendedor de Startups</li>
-                    </ul>
-                </article>
-
-                <!-- Tópico 6: Ferramentas & Tecnologias -->
-                <article class="topic-card">
-                    <h3 class="topic-title">🛠️ Ferramentas & Tecnologias</h3>
-                    <ul class="topic-list">
-                        <li>IDEs e editores de código</li>
-                        <li>Ferramentas de build e deploy</li>
-                        <li>Plataformas em nuvem (AWS, Azure)</li>
-                        <li>Containers (Docker, Kubernetes)</li>
-                        <li>Frameworks web e mobile</li>
-                        <li>Ferramentas de análise de código</li>
-                    </ul>
-                </article>
+                <article class="topic-card"><span class="card-index">01</span><h3 class="topic-title">Fundamentos sólidos</h3><p>Combino computação, lógica e boas práticas para construir uma base técnica consistente.</p></article>
+                <article class="topic-card"><span class="card-index">02</span><h3 class="topic-title">Construção completa</h3><ul class="topic-list"><li>Requisitos e arquitetura</li><li>Desenvolvimento e testes</li><li>Manutenção e evolução</li></ul></article>
+                <article class="topic-card"><span class="card-index">03</span><h3 class="topic-title">Visão técnica</h3><ul class="topic-list"><li>Programação e SQL</li><li>Git e controle de versão</li><li>Design de soluções</li></ul></article>
+                <article class="topic-card"><span class="card-index">04</span><h3 class="topic-title">Colaboração real</h3><ul class="topic-list"><li>Comunicação clara</li><li>Trabalho em equipe</li><li>Resolução de problemas</li></ul></article>
+                <article class="topic-card"><span class="card-index">05</span><h3 class="topic-title">Próximos passos</h3><ul class="topic-list"><li>Desenvolvimento Full Stack</li><li>Cloud e DevOps</li><li>Segurança de aplicações</li></ul></article>
+                <article class="topic-card"><span class="card-index">06</span><h3 class="topic-title">Ferramentas certas</h3><ul class="topic-list"><li>Frameworks web e mobile</li><li>Containers e deploy</li><li>Qualidade de código</li></ul></article>
             </div>
         </section>
-
-        <!-- ============================================
-             SEÇÃO 2: HABILIDADES
-             ============================================ -->
         <section id="skills" class="section">
-            <h2 class="section-title">Habilidades Técnicas & Profissionais</h2>
-            
-            <article class="card card-profile">
-                <p>Um engenheiro de software competente possui um conjunto diverso de habilidades que combinam <strong>conhecimento técnico profundo</strong> com <strong>excelentes soft skills</strong>. Confira abaixo meu portfólio de competências:</p>
-            </article>
-
-            <!-- Linguagens de Programação -->
-            <h3 class="subsection-title">💻 Linguagens de Programação</h3>
+            <div class="section-heading"><p class="eyebrow">02 / Toolkit</p><h2 class="section-title">O que estou<br><em>aperfeiçoando.</em></h2></div>
+            <article class="card card-profile"><p>Um retrato honesto das tecnologias que estudo e pratico. Cada porcentagem representa meu nível atual de familiaridade e o próximo espaço para crescer.</p></article>
+            <h3 class="subsection-title">Linguagens de programação</h3>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>Java</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 92%"></div>
-                    </div>
-                    <span class="skill-level">92%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Python</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
-                    </div>
-                    <span class="skill-level">88%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>JavaScript</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                    <span class="skill-level">85%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>TypeScript</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 82%"></div>
-                    </div>
-                    <span class="skill-level">82%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>SQL</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                    <span class="skill-level">90%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>C++</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 78%"></div>
-                    </div>
-                    <span class="skill-level">78%</span>
-                </div>
+                <div class="skill-card"><h4>Java</h4><div class="skill-bar"><div class="skill-progress" style="width:92%"></div></div><span class="skill-level">92%</span></div><div class="skill-card"><h4>Python</h4><div class="skill-bar"><div class="skill-progress" style="width:88%"></div></div><span class="skill-level">88%</span></div><div class="skill-card"><h4>JavaScript</h4><div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div><span class="skill-level">85%</span></div><div class="skill-card"><h4>TypeScript</h4><div class="skill-bar"><div class="skill-progress" style="width:82%"></div></div><span class="skill-level">82%</span></div><div class="skill-card"><h4>SQL</h4><div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div><span class="skill-level">90%</span></div><div class="skill-card"><h4>C++</h4><div class="skill-bar"><div class="skill-progress" style="width:78%"></div></div><span class="skill-level">78%</span></div>
             </div>
-
-            <!-- Frameworks & Bibliotecas -->
-            <h3 class="subsection-title">📦 Frameworks & Bibliotecas</h3>
+            <h3 class="subsection-title">Frameworks & bibliotecas</h3>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>React.js</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 87%"></div>
-                    </div>
-                    <span class="skill-level">87%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Node.js</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 89%"></div>
-                    </div>
-                    <span class="skill-level">89%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Spring Boot</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 91%"></div>
-                    </div>
-                    <span class="skill-level">91%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Django</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 84%"></div>
-                    </div>
-                    <span class="skill-level">84%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Docker</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 86%"></div>
-                    </div>
-                    <span class="skill-level">86%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Kubernetes</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 80%"></div>
-                    </div>
-                    <span class="skill-level">80%</span>
-                </div>
+                <div class="skill-card"><h4>React.js</h4><div class="skill-bar"><div class="skill-progress" style="width:87%"></div></div><span class="skill-level">87%</span></div><div class="skill-card"><h4>Node.js</h4><div class="skill-bar"><div class="skill-progress" style="width:89%"></div></div><span class="skill-level">89%</span></div><div class="skill-card"><h4>Spring Boot</h4><div class="skill-bar"><div class="skill-progress" style="width:91%"></div></div><span class="skill-level">91%</span></div><div class="skill-card"><h4>Django</h4><div class="skill-bar"><div class="skill-progress" style="width:84%"></div></div><span class="skill-level">84%</span></div><div class="skill-card"><h4>Docker</h4><div class="skill-bar"><div class="skill-progress" style="width:86%"></div></div><span class="skill-level">86%</span></div><div class="skill-card"><h4>Kubernetes</h4><div class="skill-bar"><div class="skill-progress" style="width:80%"></div></div><span class="skill-level">80%</span></div>
             </div>
-
-            <!-- Soft Skills -->
-            <h3 class="subsection-title">🎯 Habilidades Profissionais (Soft Skills)</h3>
+            <h3 class="subsection-title">Como trabalho</h3>
             <div class="skills-grid">
-                <div class="skill-card">
-                    <h4>Liderança</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 85%"></div>
-                    </div>
-                    <span class="skill-level">85%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Comunicação</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 88%"></div>
-                    </div>
-                    <span class="skill-level">88%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Trabalho em Equipe</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 92%"></div>
-                    </div>
-                    <span class="skill-level">92%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Resolução de Problemas</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 90%"></div>
-                    </div>
-                    <span class="skill-level">90%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Gestão de Tempo</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 87%"></div>
-                    </div>
-                    <span class="skill-level">87%</span>
-                </div>
-                <div class="skill-card">
-                    <h4>Aprendizado Contínuo</h4>
-                    <div class="skill-bar">
-                        <div class="skill-progress" style="width: 95%"></div>
-                    </div>
-                    <span class="skill-level">95%</span>
-                </div>
+                <div class="skill-card"><h4>Liderança</h4><div class="skill-bar"><div class="skill-progress" style="width:85%"></div></div><span class="skill-level">85%</span></div><div class="skill-card"><h4>Comunicação</h4><div class="skill-bar"><div class="skill-progress" style="width:88%"></div></div><span class="skill-level">88%</span></div><div class="skill-card"><h4>Trabalho em equipe</h4><div class="skill-bar"><div class="skill-progress" style="width:92%"></div></div><span class="skill-level">92%</span></div><div class="skill-card"><h4>Resolução de problemas</h4><div class="skill-bar"><div class="skill-progress" style="width:90%"></div></div><span class="skill-level">90%</span></div><div class="skill-card"><h4>Gestão de tempo</h4><div class="skill-bar"><div class="skill-progress" style="width:87%"></div></div><span class="skill-level">87%</span></div><div class="skill-card"><h4>Aprendizado contínuo</h4><div class="skill-bar"><div class="skill-progress" style="width:95%"></div></div><span class="skill-level">95%</span></div>
             </div>
         </section>
-
-        <!-- ============================================
-             SEÇÃO 3: CONTATO
-             ============================================ -->
         <section id="contact" class="section">
-            <h2 class="section-title">Entre em Contato</h2>
-            
-            <article class="card card-profile">
-                <p>Quer discutir projetos, colaborar ou simplesmente bater um papo sobre desenvolvimento de software? Estou sempre disponível e ansioso por novas oportunidades!</p>
-            </article>
-
-            <!-- Informações de Contato -->
-            <div class="contact-info-grid">
-                <div class="contact-card">
-                    <h3>📧 Email</h3>
-                    <p><a href="mailto:artursilvaaraujo31@gmail.com">artursilvaaraujo31@gmail.com</a></p>
-                    <p class="contact-sub">Responderei em até 24 horas</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>💼 LinkedIn</h3>
-                    <p><a href="https://www.linkedin.com/in/artur-silva-araújo-9614a7213" target="_blank">www.linkedin.com/in/artur-silva-araújo-9614a7213</a></p>
-                    <p class="contact-sub">Conecte-se comigo</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>🐙 GitHub</h3>
-                    <p><a href="https://github.com/artur-silva-dev" target="_blank">github.com/artur-silva-dev</a></p>
-                    <p class="contact-sub">Veja meus projetos</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>📱 Telefone</h3>
-                    <p>(73) 99903-5935</p>
-                    <p class="contact-sub">WhatsApp disponível</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>📍 Localização</h3>
-                    <p>Teixeira de Freitas - BA, Brasil</p>
-                    <p class="contact-sub">Aberto a trabalho remoto</p>
-                </div>
-
-                <div class="contact-card">
-                    <h3>⏰ Disponibilidade</h3>
-                    <p>Segunda a Sexta: 09:00 - 18:00</p>
-                    <p class="contact-sub">Fuso horário BRT (-3)</p>
-                </div>
-            </div>
-
-            <!-- Formulário Rápido -->
-            <article class="card card-form">
-                <h3 class="form-title">Enviar Mensagem Rápida</h3>
-                <form class="contact-form" onsubmit="handleFormSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="seu.email@example.com" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject">Assunto:</label>
-                        <input type="text" id="subject" name="subject" placeholder="Assunto da mensagem" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Mensagem:</label>
-                        <textarea id="message" name="message" placeholder="Sua mensagem..." rows="5" required></textarea>
-                    </div>
-
-                    <button type="submit" class="form-btn">Enviar Mensagem</button>
-                </form>
-                <div id="form-message" class="form-message"></div>
-            </article>
+            <div class="section-heading"><p class="eyebrow">03 / Contato</p><h2 class="section-title">Vamos criar algo<br><em>que faça sentido.</em></h2></div>
+            <article class="card card-profile"><p>Quer discutir projetos, colaborar ou trocar ideias sobre desenvolvimento de software? Estou aberto a novas conversas e oportunidades.</p></article>
+            <div class="contact-info-grid"><div class="contact-card"><h3>Email</h3><p><a href="mailto:artursilvaaraujo31@gmail.com">artursilvaaraujo31@gmail.com</a></p><p class="contact-sub">Responderei em até 24 horas</p></div><div class="contact-card"><h3>LinkedIn</h3><p><a href="https://www.linkedin.com/in/artur-silva-araújo-9614a7213" target="_blank" rel="noreferrer">Meu perfil profissional</a></p><p class="contact-sub">Conecte-se comigo</p></div><div class="contact-card"><h3>GitHub</h3><p><a href="https://github.com/euartursilva" target="_blank" rel="noreferrer">github.com/euartursilva</a></p><p class="contact-sub">Veja meus projetos</p></div><div class="contact-card"><h3>Localização</h3><p>Teixeira de Freitas - BA</p><p class="contact-sub">Aberto a trabalho remoto</p></div></div>
+            <article class="card card-form"><h3 class="form-title">Enviar mensagem</h3><form class="contact-form" onsubmit="handleFormSubmit(event)"><div class="form-group"><label for="name">Nome</label><input type="text" id="name" name="name" placeholder="Seu nome completo" required></div><div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="seu.email@example.com" required></div><div class="form-group"><label for="subject">Assunto</label><input type="text" id="subject" name="subject" placeholder="Como posso ajudar?" required></div><div class="form-group"><label for="message">Mensagem</label><textarea id="message" name="message" placeholder="Escreva sua mensagem..." rows="5" required></textarea></div><button type="submit" class="form-btn">Enviar mensagem <span>↗</span></button></form><div id="form-message" class="form-message"></div></article>
         </section>
     </main>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>&copy; 2026 Artur Silva Araújo. Todos os direitos reservados.</p>
-    </footer>
-
-    <script src="script.js"></script>
+    <footer class="footer"><p>© 2026 Artur Silva Araújo <span>·</span> Feito com intenção.</p></footer>
+    <script src="index.js"></script>
 </body>
-
 </html>
