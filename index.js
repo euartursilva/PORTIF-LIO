@@ -65,11 +65,12 @@ function triggerEmojiBurst(container) {
 }
 
 function handleFormSubmit(event) {
-    event.preventDefault();
     const form = event.currentTarget;
     const message = document.getElementById('form-message');
+    const emailBurst = document.getElementById('email-emoji-burst');
 
-    message.textContent = 'Mensagem preparada com sucesso. Obrigado pelo contato!';
+    triggerEmojiBurst(emailBurst);
+    message.textContent = 'Enviando sua mensagem...';
     message.className = 'form-message success';
-    form.reset();
+    form.querySelector('.form-btn').disabled = true;
 }
