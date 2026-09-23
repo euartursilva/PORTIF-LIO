@@ -15,6 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     navButtons.forEach((button) => button.addEventListener('click', () => showSection(button.dataset.section)));
 
+    const emailInput = document.getElementById('email');
+    const emailBurst = document.getElementById('email-emoji-burst');
+    if (emailInput && emailBurst) {
+        emailInput.addEventListener('blur', () => {
+            if (emailInput.value.trim() && emailInput.checkValidity()) triggerEmojiBurst(emailBurst);
+        });
+    }
+
     document.querySelectorAll('.skill-progress').forEach((bar) => {
         const width = bar.style.width;
         bar.style.width = '0';
@@ -35,10 +43,32 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+function triggerEmojiBurst(container) {
+    const emojis = Array.from({ length: 12 }, () => '👾');
+    const positions = [
+        [-30, -90], [-75, -145], [-120, -55], [-165, -125],
+        [-210, -200], [-255, -85], [-300, -165], [-345, -245],
+        [-390, -115], [-435, -190], [-480, -70], [-525, -145],
+    ];
+
+    container.replaceChildren();
+    emojis.forEach((emoji, index) => {
+        const particle = document.createElement('span');
+        particle.className = 'emoji-particle';
+        particle.textContent = emoji;
+        particle.style.setProperty('--particle-index', index);
+        particle.style.setProperty('--particle-x', `${positions[index][0]}px`);
+        particle.style.setProperty('--particle-y', `${positions[index][1]}px`);
+        container.appendChild(particle);
+    });
+    window.setTimeout(() => container.replaceChildren(), 3000);
+}
+
 function handleFormSubmit(event) {
     event.preventDefault();
     const form = event.currentTarget;
     const message = document.getElementById('form-message');
+
     message.textContent = 'Mensagem preparada com sucesso. Obrigado pelo contato!';
     message.className = 'form-message success';
     form.reset();
