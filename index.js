@@ -18,8 +18,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email');
     const emailBurst = document.getElementById('email-emoji-burst');
     if (emailInput && emailBurst) {
+        let lastTriggeredEmail = '';
+        const triggerWhenValid = () => {
+            const currentEmail = emailInput.value.trim();
+            if (currentEmail && emailInput.checkValidity() && currentEmail !== lastTriggeredEmail) {
+                lastTriggeredEmail = currentEmail;
+                triggerEmojiBurst(emailBurst);
+            }
+        };
+
+        emailInput.addEventListener('input', triggerWhenValid);
         emailInput.addEventListener('blur', () => {
-            if (emailInput.value.trim() && emailInput.checkValidity()) triggerEmojiBurst(emailBurst);
+            triggerWhenValid();
         });
     }
 
@@ -46,9 +56,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function triggerEmojiBurst(container) {
     const emojis = Array.from({ length: 12 }, () => '👾');
     const positions = [
-        [-30, -90], [-75, -145], [-120, -55], [-165, -125],
-        [-210, -200], [-255, -85], [-300, -165], [-345, -245],
-        [-390, -115], [-435, -190], [-480, -70], [-525, -145],
+        [-180, -120], [-120, -190], [-60, -85], [0, -165],
+        [60, -105], [120, -215], [180, -135], [-150, -275],
+        [-45, -245], [75, -285], [165, -245], [240, -180],
     ];
 
     container.replaceChildren();
