@@ -82,3 +82,24 @@ img,svg,video,canvas { max-width:100%; }
 .skill-card .skill-bar { background:#354a44; }
 .skill-card .skill-level { color:var(--accent); }
 @media (max-width:760px) { .signal-strip { overflow:hidden; justify-content:flex-start; flex-direction:column; gap:7px; } .hero-grid::after { display:none; } .photo-console { max-width:310px; margin:auto; } .orbit-label { margin-top:30px; } }
+
+/* Playable portfolio cartridge */
+.gameboy-section { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:center; padding:105px 0 75px; border-bottom:1px solid var(--line); }
+.gameboy-intro p:last-child { max-width:300px; margin-top:24px; color:var(--muted); font-size:.92rem; line-height:1.75; }
+.gameboy-shell { width:min(100%,430px); justify-self:end; padding:25px 28px 22px; border-radius:20px 20px 42px 20px; background:#b8bd9e; box-shadow:inset -6px -7px 0 #92977c, 20px 20px 0 rgba(20,33,31,.12); transform:rotate(2deg); color:#30352b; }
+.gameboy-brand { padding:0 5px 12px; color:#555d49; font:800 1.15rem 'Manrope',sans-serif; letter-spacing:.04em; }
+.gameboy-brand span { color:#7f3f54; } .gameboy-brand small { margin-left:8px; font:500 .5rem 'DM Mono',monospace; letter-spacing:.15em; }
+.gameboy-screen-frame { padding:18px 22px 22px; border-radius:12px 12px 26px 12px; background:#4b5142; box-shadow:inset 2px 2px 0 #34392f; }
+.gameboy-screen { min-height:228px; padding:11px 13px 9px; outline:none; background:#9bbc0f; color:#193b25; box-shadow:inset 0 0 0 4px #306230, inset 0 0 0 7px #8bac0f; font:500 .65rem 'DM Mono',monospace; image-rendering:pixelated; }
+.screen-top,.screen-status { display:flex; justify-content:space-between; border-bottom:2px solid #306230; padding-bottom:7px; font-size:.56rem; }
+.screen-status { border:0; border-top:2px solid #306230; padding-top:7px; margin-top:10px; font-size:.5rem; }
+.screen-content { min-height:164px; display:grid; place-items:center; align-content:center; gap:16px; text-align:center; }
+.pixel-logo { font:800 2rem/1 'DM Mono',monospace; letter-spacing:.07em; text-shadow:3px 3px #8bac0f; } .pixel-logo strong { font-size:1.25rem; }
+.screen-hint { animation:blink 1s steps(2,end) infinite; } @keyframes blink { 50% { opacity:.2; } }
+.game-menu { width:78%; display:grid; gap:5px; text-align:left; } .game-menu button { padding:5px 8px; border:0; background:transparent; color:#193b25; text-align:left; font:500 .68rem 'DM Mono',monospace; cursor:pointer; } .game-menu button.selected { background:#193b25; color:#9bbc0f; }
+.game-info { max-width:90%; line-height:1.7; text-align:center; } .game-info strong { display:block; margin-bottom:8px; font-size:.8rem; } .game-info span { font-size:.59rem; }
+.quest-grid { display:grid; grid-template-columns:repeat(8,1fr); width:88%; gap:3px; } .quest-cell { aspect-ratio:1; display:grid; place-items:center; font-size:.8rem; } .quest-cell.player { background:#193b25; color:#9bbc0f; } .quest-cell.star { color:#193b25; animation:pixel-pulse 1s steps(2,end) infinite; } @keyframes pixel-pulse { 50% { transform:scale(.65); } }
+.game-controls { display:flex; justify-content:space-between; align-items:center; padding:22px 5px 13px; } .dpad { display:grid; grid-template-columns:repeat(3,26px); grid-template-rows:repeat(3,26px); } .dpad button { border:0; background:#3d4437; color:#aeb59a; font-size:.62rem; cursor:pointer; } .dpad button:active,.game-button:active,.select-start button:active { transform:translateY(2px); } .dpad-up { grid-column:2; }.dpad-left { grid-column:1; grid-row:2; }.dpad-center { grid-column:2; grid-row:2; cursor:default!important; }.dpad-right { grid-column:3; grid-row:2; }.dpad-down { grid-column:2; grid-row:3; }
+.action-buttons { display:flex; gap:14px; transform:rotate(-22deg); } .game-button { width:42px; height:42px; border-radius:50%; border:0; background:#713e50; color:#d7dbb8; font:700 .8rem 'DM Mono',monospace; box-shadow:inset -3px -3px 0 #502d3b, 2px 2px 0 #777c65; cursor:pointer; }.button-a { transform:translateY(-13px); }
+.console-footer { display:flex; align-items:center; justify-content:space-between; padding-top:3px; } .select-start { display:flex; gap:13px; transform:rotate(-8deg); }.select-start button { border:0; border-radius:8px; padding:5px 13px; background:#737b67; color:#394032; box-shadow:inset -2px -2px 0 #555d4e; font:500 .5rem 'DM Mono',monospace; cursor:pointer; }.console-led { width:7px; height:7px; border-radius:50%; background:#a43f49; box-shadow:0 0 0 3px rgba(164,63,73,.15); }
+@media (max-width:760px) { .gameboy-section { grid-template-columns:1fr; gap:38px; padding:75px 0 58px; } .gameboy-shell { justify-self:center; transform:rotate(1deg); } }
