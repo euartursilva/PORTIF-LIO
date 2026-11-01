@@ -1,6 +1,6 @@
 # Artur Silva Araújo | Portfólio
 
-Portfólio pessoal de Artur Silva Araújo, estudante de Engenharia de Software, com foco em tecnologia, interfaces e aprendizado contínuo.
+Portfólio de Artur Silva Araújo, estudante de Engenharia de Software e desenvolvedor em formação. O site apresenta projetos, tecnologias aplicadas e formas de contato, com foco em oportunidades de estágio e posições júnior.
 
 ## Acesso
 
@@ -12,7 +12,11 @@ O site é publicado automaticamente pelo GitHub Pages a cada atualização na br
 
 ## Sobre o projeto
 
-Uma experiência web interativa com identidade visual inspirada em interfaces tecnológicas, incluindo navegação por seções, painel de identidade, efeitos de movimento e formulário de contato.
+Site estático em uma página, responsivo e acessível por navegação com âncoras. Apresenta projetos com seus escopos e limitações, habilidades demonstradas por evidências e um formulário de contato processado pelo FormSubmit. O cartucho Artur Boy é um elemento interativo opcional.
+
+## Executar localmente
+
+Abra `index.html` no navegador ou sirva a raiz do projeto com qualquer servidor HTTP estático. Para exibir uma foto no painel de identidade, adicione `foto-artur.jpg` à raiz.
 
 ## Estrutura
 
@@ -32,4 +36,4 @@ PORTIF-LIO/
 - JavaScript puro
 - Google Fonts
 
-> Para exibir a foto no painel de identidade, adicione um arquivo chamado `foto-artur.jpg` na raiz deste projeto e publique novamente.
+O formulário depende do serviço FormSubmit e de sua configuração/ativação para o endereço de email informado no HTML.

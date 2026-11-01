@@ -1,43 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navButtons = document.querySelectorAll('[data-section]');
-    const sections = document.querySelectorAll('.section');
-
-    function showSection(sectionId) {
-        const target = document.getElementById(sectionId);
-        if (!target) return;
-
-        sections.forEach((section) => section.classList.toggle('active', section.id === sectionId));
-        document.querySelectorAll('.nav-btn').forEach((button) => {
-            button.classList.toggle('active', button.dataset.section === sectionId);
+    const navLinks = document.querySelectorAll('.nav-btn[data-section]');
+    const sections = document.querySelectorAll('main > .section');
+    const setActiveSection = (sectionId) => {
+        navLinks.forEach((link) => {
+            const isActive = link.dataset.section === sectionId;
+            link.classList.toggle('active', isActive);
+            if (isActive) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
         });
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver((entries) => {
+            const visibleSections = entries
+                .filter((entry) => entry.isIntersecting)
+                .sort((first, second) => first.boundingClientRect.top - second.boundingClientRect.top);
+            if (visibleSections[0]) setActiveSection(visibleSections[0].target.id);
+        }, { rootMargin: '-20% 0px -65% 0px' });
+
+        sections.forEach((section) => sectionObserver.observe(section));
     }
-
-    navButtons.forEach((button) => button.addEventListener('click', () => showSection(button.dataset.section)));
-
-    const emailInput = document.getElementById('email');
-    const emailBurst = document.getElementById('email-emoji-burst');
-    if (emailInput && emailBurst) {
-        let lastTriggeredEmail = '';
-        const triggerWhenValid = () => {
-            const currentEmail = emailInput.value.trim();
-            if (currentEmail && emailInput.checkValidity() && currentEmail !== lastTriggeredEmail) {
-                lastTriggeredEmail = currentEmail;
-                triggerEmojiBurst(emailBurst);
-            }
-        };
-
-        emailInput.addEventListener('input', triggerWhenValid);
-        emailInput.addEventListener('blur', () => {
-            triggerWhenValid();
-        });
-    }
-
-    document.querySelectorAll('.skill-progress').forEach((bar) => {
-        const width = bar.style.width;
-        bar.style.width = '0';
-        requestAnimationFrame(() => { bar.style.width = width; });
-    });
 
     const tiltCard = document.querySelector('[data-tilt]');
     if (tiltCard && window.matchMedia('(pointer: fine)').matches) {
@@ -58,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function setupGameboy() {
     const content = document.getElementById('screen-content');
     const status = document.getElementById('screen-status');
-    if (!content || !status) return;
+    const screen = document.getElementById('game-screen');
+    if (!content || !status || !screen) return;
 
     const menu = [
         ['SOBRE MIM', 'Construo software com curiosidade, disciplina e atenção aos detalhes.'],
@@ -103,37 +86,11 @@ function setupGameboy() {
         move(name);
     };
     document.querySelectorAll('[data-game-action]').forEach((button) => button.addEventListener('click', () => action(button.dataset.gameAction)));
-    document.addEventListener('keydown', (event) => { const keys = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right', z: 'a', x: 'b', Enter: 'start' }; if (keys[event.key]) { event.preventDefault(); action(keys[event.key]); } });
-}
-
-function triggerEmojiBurst(container) {
-    const emojis = Array.from({ length: 12 }, () => '👾');
-    const positions = [
-        [-180, -120], [-120, -190], [-60, -85], [0, -165],
-        [60, -105], [120, -215], [180, -135], [-150, -275],
-        [-45, -245], [75, -285], [165, -245], [240, -180],
-    ];
-
-    container.replaceChildren();
-    emojis.forEach((emoji, index) => {
-        const particle = document.createElement('span');
-        particle.className = 'emoji-particle';
-        particle.textContent = emoji;
-        particle.style.setProperty('--particle-index', index);
-        particle.style.setProperty('--particle-x', `${positions[index][0]}px`);
-        particle.style.setProperty('--particle-y', `${positions[index][1]}px`);
-        container.appendChild(particle);
+    screen.addEventListener('keydown', (event) => {
+        const key = event.key.length === 1 ? event.key.toLowerCase() : event.key;
+        const keys = { ArrowUp: 'up', ArrowDown: 'down', ArrowLeft: 'left', ArrowRight: 'right', z: 'a', x: 'b', Enter: 'start' };
+        if (!keys[key]) return;
+        event.preventDefault();
+        action(keys[key]);
     });
-    window.setTimeout(() => container.replaceChildren(), 3000);
-}
-
-function handleFormSubmit(event) {
-    const form = event.currentTarget;
-    const message = document.getElementById('form-message');
-    const emailBurst = document.getElementById('email-emoji-burst');
-
-    triggerEmojiBurst(emailBurst);
-    message.textContent = 'Enviando sua mensagem...';
-    message.className = 'form-message success';
-    form.querySelector('.form-btn').disabled = true;
 }

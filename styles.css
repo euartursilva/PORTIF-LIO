@@ -95,6 +95,9 @@ img,svg,video,canvas { max-width:100%; }
 .project-link { display:inline-flex; align-items:center; gap:8px; align-self:flex-start; margin-top:22px; color:var(--ink); font-size:.78rem; font-weight:800; text-decoration:none; border-bottom:1px solid var(--ink); padding-bottom:5px; }
 .project-link span { color:var(--coral); }
 .project-link:focus-visible { outline:2px solid var(--coral); outline-offset:4px; }
+.projects-more { margin:-38px 0 75px; color:var(--muted); font-size:.85rem; line-height:1.7; }
+.projects-more a { display:inline-block; margin-left:5px; color:var(--ink); font-weight:800; text-decoration-color:var(--coral); text-underline-offset:4px; }
+.projects-more a span { color:var(--coral); }
 .evidence-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin-bottom:24px; }
 .evidence-card { min-width:0; padding:23px; background:rgba(255,253,247,.68); border:1px solid var(--line); }
 .evidence-card h4 { margin:24px 0 10px; font-size:.95rem; }
@@ -126,3 +129,32 @@ img,svg,video,canvas { max-width:100%; }
 .action-buttons { display:flex; gap:14px; transform:rotate(-22deg); } .game-button { width:42px; height:42px; border-radius:50%; border:0; background:#713e50; color:#d7dbb8; font:700 .8rem 'DM Mono',monospace; box-shadow:inset -3px -3px 0 #502d3b, 2px 2px 0 #777c65; cursor:pointer; }.button-a { transform:translateY(-13px); }
 .console-footer { display:flex; align-items:center; justify-content:space-between; padding-top:3px; } .select-start { display:flex; gap:13px; transform:rotate(-8deg); }.select-start button { border:0; border-radius:8px; padding:5px 13px; background:#737b67; color:#394032; box-shadow:inset -2px -2px 0 #555d4e; font:500 .5rem 'DM Mono',monospace; cursor:pointer; }.console-led { width:7px; height:7px; border-radius:50%; background:#a43f49; box-shadow:0 0 0 3px rgba(164,63,73,.15); }
 @media (max-width:760px) { .gameboy-section { grid-template-columns:1fr; gap:38px; padding:75px 0 58px; } .gameboy-shell { justify-self:center; transform:rotate(1deg); } }
+
+/* Portfolio navigation, readability, and keyboard focus */
+:root { --coral:#b04532; }
+html { scroll-padding-top:110px; }
+.site-header { position:sticky; top:0; z-index:10; background:rgba(244,241,232,.94); backdrop-filter:blur(14px); border-bottom:1px solid var(--line); }
+.section { display:block; animation:none; scroll-margin-top:110px; }
+.main-title { font-size:clamp(3.5rem,7vw,7rem); }
+.nav-btn { display:inline-block; text-decoration:none; }
+.nav-btn.active { color:var(--ink); }
+.contact-form .form-group:nth-of-type(n+3) { grid-column:1/-1; }
+.primary-btn span { color:var(--accent); }
+.photo-caption span { color:var(--accent); }
+.project-card { transition:transform .25s,box-shadow .25s; }
+.project-card:hover { transform:translateY(-5px); box-shadow:0 24px 55px rgba(20,33,31,.13); }
+.form-intro,.form-fallback { color:var(--muted); font-size:.82rem; line-height:1.7; }
+.form-intro { margin:-12px 0 24px; }
+.form-fallback { margin-top:22px; }
+.form-fallback a { color:var(--ink); font-weight:700; }
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,.gameboy-screen:focus-visible { outline:2px solid var(--coral); outline-offset:4px; }
+input:focus-visible,textarea:focus-visible { outline-offset:2px; }
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior:auto; }
+    *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; scroll-behavior:auto!important; transition-duration:.01ms!important; }
+}
+@media (max-width:760px) {
+    .main-title { font-size:clamp(3rem,13vw,4.5rem); }
+    .contact-form .form-group:nth-of-type(n+3) { grid-column:auto; }
+}
