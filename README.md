@@ -25,6 +25,7 @@ PORTIF-LIO/
 ├── index.html
 ├── styles.css
 ├── index.js
+├── img/logo-asa.svg, img/favicon.svg   logo ASA (Artur Silva Araújo) e ícone da aba
 ├── img/clientes/   prints dos sites de clientes (800×500, JPG)
 ├── README.md
 └── .github/workflows/deploy-pages.yml

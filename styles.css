@@ -179,3 +179,14 @@ input:focus-visible,textarea:focus-visible { outline-offset:2px; }
 .client-shot:focus-visible,.client-code:focus-visible { outline:2px solid var(--coral); outline-offset:4px; }
 @media (max-width:760px) { .clients-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media (max-width:450px) { .clients-grid { grid-template-columns:1fr; } .client-body { padding:20px; } }
+
+/* Logo ASA */
+.brand { display:inline-flex; align-items:center; gap:10px; }
+.brand-mark { width:50px; height:auto; transition:transform .35s cubic-bezier(.3,1.5,.5,1); }
+.brand:hover .brand-mark { transform:translateY(-3px) scale(1.06); }
+.brand-name { font:500 1.15rem 'DM Mono',monospace; letter-spacing:-.06em; }
+.footer { display:flex; align-items:center; gap:14px; }
+.footer-mark { width:38px; height:auto; opacity:.85; }
+@media (max-width:450px) { .brand-mark { width:42px; } .brand-name { font-size:1rem; } }
+.brand .brand-name { color:var(--ink); }
+.brand .brand-name .brand-dot { color:var(--coral); }
