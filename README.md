@@ -1,6 +1,6 @@
 # Artur Silva Araújo | Portfólio
 
-Portfólio de Artur Silva Araújo, estudante de Engenharia de Software e desenvolvedor em formação. O site apresenta projetos, tecnologias aplicadas e formas de contato, com foco em oportunidades de estágio e posições júnior.
+Portfólio de Artur Silva Araújo, estudante de Engenharia de Software e desenvolvedor em formação. O site apresenta sites criados para clientes pela Verus Soluções Inteligentes, projetos próprios, tecnologias aplicadas e formas de contato, com foco em oportunidades de estágio e posições júnior.
 
 ## Acesso
 
@@ -12,7 +12,7 @@ O site é publicado automaticamente pelo GitHub Pages a cada atualização na br
 
 ## Sobre o projeto
 
-Site estático em uma página, responsivo e acessível por navegação com âncoras. Apresenta projetos com seus escopos e limitações, habilidades demonstradas por evidências e um formulário de contato processado pelo FormSubmit. O cartucho Artur Boy é um elemento interativo opcional.
+Site estático em uma página, responsivo e acessível por navegação com âncoras. Apresenta sites de clientes com prints e links, projetos com seus escopos e limitações, habilidades demonstradas por evidências e um formulário de contato processado pelo FormSubmit. O cartucho Artur Boy é um elemento interativo opcional.
 
 ## Executar localmente
 
@@ -25,9 +25,16 @@ PORTIF-LIO/
 ├── index.html
 ├── styles.css
 ├── index.js
+├── img/clientes/   prints dos sites de clientes (800×500, JPG)
 ├── README.md
 └── .github/workflows/deploy-pages.yml
 ```
+
+## Adicionar um site de cliente
+
+1. Salve um print da tela inicial em `img/clientes/<nome>.jpg`, com 800×500 pixels.
+2. Em `index.html`, copie um bloco `<article class="client-card">` da seção `#clients` e troque nome, textos, situação (`No ar` ou `Demonstração`) e links.
+3. Para um site no ar, mantenha a classe `is-live` na etiqueta de situação.
 
 ## Tecnologias
 

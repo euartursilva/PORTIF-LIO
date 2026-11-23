@@ -46,6 +46,7 @@ function setupGameboy() {
     const menu = [
         ['SOBRE MIM', 'Construo software com curiosidade, disciplina e atenção aos detalhes.'],
         ['PROJETOS', 'Ideias que saíram do papel e ganharam código.'],
+        ['CLIENTES', '3 sites no ar e 3 demos para negócios de Teixeira de Freitas.'],
         ['STACK', 'Java · Python · React · SQL · Git'],
         ['CONTATO', 'artursilvaaraujo31@gmail.com'],
     ];
@@ -82,7 +83,7 @@ function setupGameboy() {
         if (name === 'select') { startQuest(); return; }
         if (name === 'a') { if (mode === 'start') renderMenu(); else if (mode === 'menu') renderInfo(); else if (mode === 'quest' && !stars.length) startQuest(); return; }
         if (name === 'b') { if (mode === 'start') return; if (mode === 'menu') showStart(); else renderMenu(); return; }
-        if (mode === 'menu' && (name === 'up' || name === 'down')) { selected = (selected + (name === 'down' ? 1 : 3)) % 4; renderMenu(); return; }
+        if (mode === 'menu' && (name === 'up' || name === 'down')) { selected = (selected + (name === 'down' ? 1 : menu.length - 1)) % menu.length; renderMenu(); return; }
         move(name);
     };
     document.querySelectorAll('[data-game-action]').forEach((button) => button.addEventListener('click', () => action(button.dataset.gameAction)));
