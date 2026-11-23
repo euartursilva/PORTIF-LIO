@@ -34,7 +34,7 @@ PORTIF-LIO/
 
 1. Salve um print da tela inicial em `img/clientes/<nome>.jpg`, com 800×500 pixels.
 2. Em `index.html`, copie um bloco `<article class="client-card">` da seção `#clients` e troque nome, textos, situação (`No ar` ou `Demonstração`) e links.
-3. Para um site no ar, mantenha a classe `is-live` na etiqueta de situação.
+3. Quando um site for publicado oficialmente pelo cliente, troque a etiqueta para `No ar` e adicione a classe `is-live`.
 
 ## Tecnologias
 
