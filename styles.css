@@ -183,10 +183,54 @@ input:focus-visible,textarea:focus-visible { outline-offset:2px; }
 /* Logo ASA */
 .brand { display:inline-flex; align-items:center; gap:10px; }
 .brand-mark { width:50px; height:auto; transition:transform .35s cubic-bezier(.3,1.5,.5,1); }
-.brand:hover .brand-mark { transform:translateY(-3px) scale(1.06); }
 .brand-name { font:500 1.15rem 'DM Mono',monospace; letter-spacing:-.06em; }
 .footer { display:flex; align-items:center; gap:14px; }
 .footer-mark { width:38px; height:auto; opacity:.85; }
 @media (max-width:450px) { .brand-mark { width:42px; } .brand-name { font-size:1rem; } }
 .brand .brand-name { color:var(--ink); }
 .brand .brand-name .brand-dot { color:var(--coral); }
+
+/* Logo ASA animado */
+.brand { position:relative; }
+.asa { overflow:visible; }
+.asa path { stroke-dasharray:100; }
+.asa-l,.asa-r { transform-box:view-box; }
+.asa-l { transform-origin:37px 54px; }
+.asa-r { transform-origin:63px 54px; }
+.asa-s { transform-box:fill-box; transform-origin:center; }
+
+/* 1. Entrada: desenha A, S, A e bate as asas */
+.brand-mark .asa-l { animation:asa-desenha .7s .15s cubic-bezier(.6,0,.2,1) both, asa-bate-l .9s 1.25s ease-in-out 2, asa-bate-l 8s 4s ease-in-out infinite; }
+.brand-mark .asa-s { animation:asa-desenha .6s .55s cubic-bezier(.6,0,.2,1) both, asa-pulo .6s 1.2s cubic-bezier(.3,1.6,.5,1) both; }
+.brand-mark .asa-r { animation:asa-desenha .7s .35s cubic-bezier(.6,0,.2,1) both, asa-bate-r .9s 1.25s ease-in-out 2, asa-bate-r 8s 4s ease-in-out infinite; }
+.brand-mark .asa-corpo { animation:asa-flutua 3.2s 2.2s ease-in-out infinite; }
+@keyframes asa-desenha { 0% { stroke-dashoffset:100; opacity:0; } 6% { opacity:1; } 100% { stroke-dashoffset:0; opacity:1; } }
+@keyframes asa-bate-l { 0%,100% { transform:none; } 25% { transform:rotate(-16deg); } 55% { transform:rotate(6deg); } 80% { transform:rotate(-4deg); } }
+@keyframes asa-bate-r { 0%,100% { transform:none; } 25% { transform:rotate(16deg); } 55% { transform:rotate(-6deg); } 80% { transform:rotate(4deg); } }
+@keyframes asa-pulo { 0% { transform:scale(.4) rotate(-30deg); } 100% { transform:none; } }
+@keyframes asa-flutua { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-2.5px); } }
+
+/* 2. Mouse em cima: bate rápido e o S balança */
+.brand:hover .asa-l,.brand:focus-visible .asa-l { animation:asa-rapido-l .32s ease-in-out infinite; }
+.brand:hover .asa-r,.brand:focus-visible .asa-r { animation:asa-rapido-r .32s ease-in-out infinite; }
+.brand:hover .asa-s,.brand:focus-visible .asa-s { animation:asa-balanca .5s ease-in-out infinite alternate; }
+@keyframes asa-rapido-l { 50% { transform:rotate(-20deg); } }
+@keyframes asa-rapido-r { 50% { transform:rotate(20deg); } }
+@keyframes asa-balanca { from { transform:rotate(-12deg) scale(1.05); } to { transform:rotate(12deg) scale(1.05); } }
+
+/* 3. Clique: levanta voo */
+.brand.voando .brand-mark { animation:asa-voo 1.1s cubic-bezier(.45,0,.2,1); }
+.brand.voando .asa-l { animation:asa-rapido-l .22s ease-in-out 5; }
+.brand.voando .asa-r { animation:asa-rapido-r .22s ease-in-out 5; }
+@keyframes asa-voo { 0% { transform:none; } 35% { transform:translate(10px,-26px) rotate(-8deg) scale(1.12); } 60% { transform:translate(22px,-14px) rotate(6deg) scale(1.06); } 100% { transform:none; } }
+.pena { position:absolute; left:24px; top:18px; width:7px; height:7px; border-radius:50% 0; pointer-events:none; animation:pena-cai 1.2s ease-out forwards; }
+@keyframes pena-cai { 0% { opacity:1; transform:translate(0,0) rotate(0); } 100% { opacity:0; transform:translate(var(--px),var(--py)) rotate(var(--pr)); } }
+
+/* Rodapé: bate as asas ao passar o mouse */
+.footer:hover .footer-mark .asa-l { animation:asa-rapido-l .35s ease-in-out 3; }
+.footer:hover .footer-mark .asa-r { animation:asa-rapido-r .35s ease-in-out 3; }
+
+@media (prefers-reduced-motion: reduce) {
+    .asa path,.asa .asa-corpo,.brand.voando .brand-mark { animation:none!important; stroke-dashoffset:0; }
+    .pena { display:none; }
+}

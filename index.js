@@ -34,8 +34,34 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    setupLogo();
     setupGameboy();
 });
+
+function setupLogo() {
+    const brand = document.querySelector('.brand');
+    if (!brand || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const cores = ['#d5f36b', '#b04532', '#14211f'];
+    brand.addEventListener('click', () => {
+        brand.classList.remove('voando');
+        void brand.offsetWidth;
+        brand.classList.add('voando');
+        for (let i = 0; i < 7; i += 1) {
+            const pena = document.createElement('span');
+            pena.className = 'pena';
+            pena.style.background = cores[i % cores.length];
+            pena.style.setProperty('--px', `${(Math.random() - 0.5) * 90}px`);
+            pena.style.setProperty('--py', `${20 + Math.random() * 50}px`);
+            pena.style.setProperty('--pr', `${Math.random() * 540 - 270}deg`);
+            pena.style.animationDelay = `${i * 40}ms`;
+            brand.appendChild(pena);
+            setTimeout(() => pena.remove(), 1500);
+        }
+    });
+    brand.addEventListener('animationend', (event) => {
+        if (event.animationName === 'asa-voo') brand.classList.remove('voando');
+    });
+}
 
 function setupGameboy() {
     const content = document.getElementById('screen-content');
