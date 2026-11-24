@@ -72,7 +72,6 @@ function setupGameboy() {
     const menu = [
         ['SOBRE MIM', 'Construo software com curiosidade, disciplina e atenção aos detalhes.'],
         ['PROJETOS', 'Ideias que saíram do papel e ganharam código.'],
-        ['CLIENTES', '6 propostas de site para negócios de Teixeira de Freitas.'],
         ['STACK', 'Java · Python · React · SQL · Git'],
         ['CONTATO', 'artursilvaaraujo31@gmail.com'],
     ];

@@ -159,26 +159,6 @@ input:focus-visible,textarea:focus-visible { outline-offset:2px; }
     .contact-form .form-group:nth-of-type(n+3) { grid-column:auto; }
 }
 
-/* Sites para clientes */
-.clients-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-bottom:70px; }
-.client-card { display:flex; flex-direction:column; min-width:0; background:var(--white); border:1px solid var(--line); box-shadow:var(--shadow); transition:transform .25s,box-shadow .25s; }
-.client-card:hover { transform:translateY(-5px); box-shadow:0 24px 55px rgba(20,33,31,.13); }
-.client-shot { position:relative; display:block; aspect-ratio:16/10; overflow:hidden; background:#1a2825; border-bottom:1px solid var(--line); }
-.client-shot::before { content:''; position:absolute; inset:0 0 auto; z-index:1; height:20px; background:linear-gradient(90deg,var(--coral) 0 6px,transparent 6px 12px,var(--accent) 12px 18px,transparent 18px 24px,#9fd1c8 24px 30px,transparent 30px) 10px 7px/40px 6px no-repeat,#1a2825; }
-.client-shot img { position:absolute; top:20px; left:0; width:100%; height:calc(100% - 20px); object-fit:cover; object-position:top; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
-.client-card:hover .client-shot img { transform:scale(1.04); }
-.client-body { display:flex; flex-direction:column; flex:1; padding:22px 24px 24px; }
-.client-card h3 { margin:18px 0 10px; font-size:1.25rem; letter-spacing:-.04em; }
-.client-detail { margin:12px 0 16px; padding-left:12px; border-left:2px solid var(--accent); color:var(--muted); font-size:.8rem; line-height:1.65; }
-.project-status.is-live { background:var(--ink); color:var(--accent); }
-.project-status.is-live::before { content:''; display:inline-block; width:6px; height:6px; margin-right:6px; border-radius:50%; background:var(--accent); vertical-align:1px; animation:pulse 1.8s ease-in-out infinite; }
-.client-links { display:flex; align-items:center; gap:18px; margin-top:20px; }
-.client-links .project-link { margin-top:0; }
-.client-code { color:var(--muted); font:500 .7rem 'DM Mono',monospace; text-decoration:none; border-bottom:1px solid var(--line); padding-bottom:4px; }
-.client-code:hover { color:var(--ink); border-color:var(--ink); }
-.client-shot:focus-visible,.client-code:focus-visible { outline:2px solid var(--coral); outline-offset:4px; }
-@media (max-width:760px) { .clients-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (max-width:450px) { .clients-grid { grid-template-columns:1fr; } .client-body { padding:20px; } }
 
 /* Logo ASA */
 .brand { display:inline-flex; align-items:center; gap:10px; }
